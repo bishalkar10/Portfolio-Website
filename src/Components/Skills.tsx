@@ -17,17 +17,17 @@ const Skills = () => {
     <section id='skills'>
       <h2 className='title'>Skills</h2>
       <div className='skill-grid'>
-        <SkillCard svgPath={'/public/svg/html.svg'} />
-        <SkillCard svgPath={'/public/svg/css.svg'} />
-        <SkillCard svgPath={'/public/svg/javascript.svg'} />
-        <SkillCard svgPath={'/public/svg/react.svg'} />
-        <SkillCard svgPath={'/public/svg/tailwindcss.svg'} />
-        <SkillCard svgPath={'/public/svg/sass.svg'} />
-        <SkillCard svgPath={'/public/svg/vitejs.svg'} />
-        <SkillCard svgPath={'/public/svg/python.svg'} />
-        <SkillCard svgPath={'/public/svg/vscode.svg'} />
-        <SkillCard svgPath={'/public/svg/git.svg'} />
-        <SkillCard svgPath={'/public/svg/github.svg'} />
+        <SkillCard svgPath={'svg/html.svg'} />
+        <SkillCard svgPath={'svg/css.svg'} />
+        <SkillCard svgPath={'svg/javascript.svg'} />
+        <SkillCard svgPath={'svg/react.svg'} />
+        <SkillCard svgPath={'svg/tailwindcss.svg'} />
+        <SkillCard svgPath={'svg/sass.svg'} />
+        <SkillCard svgPath={'svg/vitejs.svg'} />
+        <SkillCard svgPath={'svg/python.svg'} />
+        <SkillCard svgPath={'svg/vscode.svg'} />
+        <SkillCard svgPath={'svg/git.svg'} />
+        <SkillCard svgPath={'svg/github.svg'} />
       </div>
     </section>
   )

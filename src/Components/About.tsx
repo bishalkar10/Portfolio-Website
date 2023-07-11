@@ -10,7 +10,7 @@ const About = () => {
 					<div className='profile'>
 
 						<figure>
-							<img className='my-photo' src="/public/images/my_photo.jpg" alt="" />
+							<img className='my-photo' src="images/my_photo.jpg" alt="" />
 							<figcaption>
 								I'm an extremely ambitious and pasionate software engineer. I am proficient in developing responsive web application using HTML5, CSS3, Javascript, ReactJs, Sass, Tailwindcss. I have deployed my works on Github Pages and Netlify. I use vite.js, which is several times faster then the old and slow webpack. I am confident than I can take a design and convert it into a pixel-perfect web application. I can consume backend APIs using axios and integret them in the Frontend side.
 								<br /> <br />
