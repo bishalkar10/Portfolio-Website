@@ -5,16 +5,18 @@ import Skills from "./Components/Skills"
 import Projects from "./Components/Projects"
 import Contact from "./Components/Contact"
 import Footer from "./Components/Footer"
-import './Style/navbar.sass'
+import { useRef } from 'react'
 
 function App() {
 
+  const aboutRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
-      <Navbar />
+      <Navbar aboutRef={aboutRef} />
       <main>
         <HomePage />
-        <About />
+        <About aboutRef={aboutRef} />
         <Skills />
         <Projects />
         <Contact />

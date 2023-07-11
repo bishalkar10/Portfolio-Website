@@ -1,7 +1,13 @@
 import '../Style/about.sass'
-const About = () => {
+import React from 'react'
+
+interface AboutProps {
+	aboutRef: React.RefObject<HTMLDivElement>
+}
+
+const About: React.FC<AboutProps> = ({ aboutRef }) => {
 	return (
-		<section id='about'>
+		<section id='about' ref={aboutRef}>
 			<div className='container'>
 				<h2 className='title'>About</h2>
 
