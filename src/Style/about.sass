@@ -1,0 +1,75 @@
+@import 'index.sass'
+
+#about
+  // height: 100vh
+  min-height: 100vh
+  padding: 60px 0
+  background-color: #141414
+  color: white
+
+  .about-me
+    display: flex
+    flex-direction: column
+    width: 80%
+    margin: 20px auto
+    gap: 40px
+    h3
+      text-align: center
+      font-size: 2em
+      font-family: $JosefinSans
+    // Profile section ---------------------
+    .profile
+      display: flex
+      flex-direction: column
+
+      figure
+        width: 100%
+        display: flow-root // if text in figcaption is less then we might get some problem
+        padding: 10px
+        .my-photo
+          height: 150px
+          width: 150px
+          border-radius: 50%
+          margin-right: 10px
+          float: left
+          display: block
+        figcaption
+          font-family: $CrimsonText
+          font-size: 1.25em
+          color: #dadada
+
+    .education
+      margin: 0 auto
+      width: 100%
+      min-width: 350px
+      max-width: 450px
+      display: flex
+      flex-direction: column
+      gap: 20px
+      h4
+        font-size: 1.3em
+        font-family: $JosefinSans
+
+      span
+        font-weight: normal
+        float: right
+        font-style: italic
+        color: #dadada
+        font-family: $Verdana
+        font-size: 12px
+
+      p
+        padding-left: 30px
+        color: #dadada
+        font-family: $Verdana
+.resume
+  color: #fff
+  font-family: $RobotoCondensed
+  background-color: #dc2626
+  font-size: 1.2rem
+  padding: 15px 20px
+  margin: auto
+  display: grid
+  place-content: center
+  text-decoration: none
+  border-radius: 5px

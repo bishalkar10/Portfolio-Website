@@ -1,0 +1,52 @@
+@import 'index.sass'
+// Importing the index.sass file for Roboto font
+$navlink-color: #dc2626
+
+header
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 100
+	.topnav
+		background-color: #ffffff
+		border-bottom: 5px solid #dc2626
+		display: grid
+		place-content: center
+		align-items: center
+		height: 80px
+		padding: 0 20px
+		width: 100vw
+
+		ul
+			list-style-type: none
+			color: white
+			display: flex
+			align-items: center
+			justify-content: center
+			gap: min(30px, 3.5vw)
+
+			a
+				color: #000
+				text-decoration: none
+				font-size: min(4.5vw, 1.3rem)
+				font-family: $Ubuntu
+				position: relative
+				&:hover
+					color: $navlink-color
+
+				&::after
+					content: ''
+					position: absolute
+					bottom: -8px
+					display: block
+					width: 0
+					height: 3px
+					background-color: $navlink-color
+					transition: width 0.3s
+				&:hover::after
+					width: 100%
+
+@media(min-width: 768px )
+	.topnav
+		ul
+			display: flex

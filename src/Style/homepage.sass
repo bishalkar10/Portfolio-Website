@@ -1,0 +1,42 @@
+@import 'index.sass'
+
+#home
+  height: 100vh
+  min-height: 100vh
+  background: radial-gradient(circle, #08203e,#145277, #557c93)
+
+  .main-div
+    display: grid
+    place-content: center
+    height: 100%
+
+    h1
+      font-size: clamp(44px, min(10vw, 64px), 64px)
+      font-family: $BrunoAceSC
+      color: white
+      text-align: center
+    p
+      font-size: 20px
+      font-family: $Roboto
+      color: white
+      text-align: center
+      margin: 10px 0 40px 0
+
+    .faIcons
+      list-style-type: none
+      display: flex
+      gap: 30px
+      justify-content: center
+      .icon
+        color: white
+        font-size: 30px
+
+    .down-icon-link
+      position: absolute
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+      margin-bottom: 30px
+    .icon
+      color: white
+      font-size: 50px
