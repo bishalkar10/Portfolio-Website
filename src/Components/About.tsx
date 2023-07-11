@@ -30,7 +30,7 @@ const About = () => {
 						</div>
 					</div>
 
-					<a href='/public/Gain Prasad Kar Resume.pdf' className="resume" download>Download Resume</a>
+					<a href='/Gain Prasad Kar Resume.pdf' className="resume" download>Download Resume</a>
 				</div>
 			</div>
 		</section>
