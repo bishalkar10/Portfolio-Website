@@ -2,7 +2,7 @@
 
 $border-radius: 8px
 
-@mixin link-btn($bg-color : blue)
+@mixin link-btn($bg-color : #0077b6)
   color: white
   background-color: $bg-color
   padding: 5px 25px
@@ -10,6 +10,7 @@ $border-radius: 8px
   border-radius: 20px
   font-family: $CrimsonText
   font-size: 1.1em
+  box-shadow: 0 8px 6px 0px rgba(0,0,0,0.4)
 
 @mixin description
   display: none
@@ -22,7 +23,7 @@ $border-radius: 8px
   background-color: #cbd5e0
 
 #projects
-  background-color: #b6b6b6
+  background: linear-gradient(to right, #cad0ff,#e3e3e3 )
   min-height: 100vh
   padding: 60px 0
 
@@ -64,6 +65,8 @@ $border-radius: 8px
           flex-direction: column
           align-items: center
           gap: 20px
+          border-radius: $border-radius
+          box-shadow: 0 20px 35px 0px rgba(0,0,0,0.3)
 
           .info
             @include description
@@ -94,7 +97,7 @@ $border-radius: 8px
             @include link-btn
 
           .code-btn
-            @include link-btn($bg-color: red)
+            @include link-btn($bg-color: #5465ff)
 
       .description
         @include description

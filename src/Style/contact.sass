@@ -1,12 +1,16 @@
+@import 'index.sass'
+
 @mixin input
   min-width: 100%
   max-width: 100%
   padding: 10px
   border: 1px solid #ccc
   border-radius: 4px
+  box-shadow: 0 5px 3px 0 rgba(0,0,0,0.1)
 
 #contact
   padding: 60px 0
+  background: linear-gradient(to right, #cad0ff,#e3e3e3 )
 
   .contact-form
     max-width: 400px
@@ -41,3 +45,7 @@
       border: none
       border-radius: 4px
       cursor: pointer
+      box-shadow: 0 5px 3px rgba(0,0,0,0.3)
+      font-family: $Ubuntu
+      &:hover
+        background-color: #0268d4

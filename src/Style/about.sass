@@ -10,12 +10,14 @@
   .about-me
     display: flex
     flex-direction: column
-    width: 80%
+    width: 95%
     margin: 20px auto
     gap: 40px
+    @media(min-width: 540px )
+      width: 85%
     h3
       text-align: center
-      font-size: 2em
+      font-size: 2rem
       font-family: $JosefinSans
     // Profile section ---------------------
     .profile
@@ -41,14 +43,18 @@
     .education
       margin: 0 auto
       width: 100%
-      min-width: 350px
-      max-width: 450px
+      min-width: 340px
+      max-width: 400px
       display: flex
       flex-direction: column
       gap: 20px
+      @media ( min-width: 540px )
+        max-width: 450px
       h4
-        font-size: 1.3em
+        font-size: 1.1rem
         font-family: $JosefinSans
+        @media (min-width: 540px)
+          font-size: 1.4rem
 
       span
         font-weight: normal
@@ -62,14 +68,14 @@
         padding-left: 30px
         color: #dadada
         font-family: $Verdana
-.resume
-  color: #fff
-  font-family: $RobotoCondensed
-  background-color: #dc2626
-  font-size: 1.2rem
-  padding: 15px 20px
-  margin: auto
-  display: grid
-  place-content: center
-  text-decoration: none
-  border-radius: 5px
+    .resume
+      color: #fff
+      font-family: $RobotoCondensed
+      background-color: #006dc7
+      font-size: 1.2rem
+      padding: 15px 20px
+      margin: auto
+      display: grid
+      place-content: center
+      text-decoration: none
+      border-radius: 5px
