@@ -1,5 +1,10 @@
 @import 'index.sass'
 
+@mixin font-styles($font-family, $font-size, $font-color)
+  font-family: $font-family
+  font-size: $font-size
+  color: $font-color
+
 #about
   // height: 100vh
   min-height: 100vh
@@ -16,9 +21,8 @@
     @media(min-width: 540px )
       width: 85%
     h3
+      @include font-styles( $JosefinSans, 2rem , white )
       text-align: center
-      font-size: 2rem
-      font-family: $JosefinSans
     // Profile section ---------------------
     .profile
       display: flex
@@ -36,9 +40,7 @@
           float: left
           display: block
         figcaption
-          font-family: $CrimsonText
-          font-size: 1.25em
-          color: #dadada
+          @include font-styles( $CrimsonText, 1.25rem , #dadada )
 
     .education
       margin: 0 auto
@@ -57,22 +59,18 @@
           font-size: 1.4rem
 
       span
+        @include font-styles($Verdana, 12px ,#dadada )
         font-weight: normal
         float: right
         font-style: italic
-        color: #dadada
-        font-family: $Verdana
-        font-size: 12px
 
       p
+        @include font-styles($Verdana, 1rem ,#dadada )
         padding-left: 30px
-        color: #dadada
-        font-family: $Verdana
+
     .resume
-      color: #fff
-      font-family: $RobotoCondensed
+      @include font-styles($RobotoCondensed, 1.2rem, #fff)
       background-color: #006dc7
-      font-size: 1.2rem
       padding: 15px 20px
       margin: auto
       display: grid

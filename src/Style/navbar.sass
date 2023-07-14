@@ -3,89 +3,65 @@
 $navlink-color: #caf0f8
 $alternate-navlink-color: #3961e6
 
-header
+@mixin navbar-position
 	position: fixed
 	top: 0
 	left: 0
+	transition: 0.3s
 	z-index: 100
+
+@mixin navbar-style
 	.topnav
-		background: radial-gradient(circle, #08203e,#145277, #557c93)
-
+		background: radial-gradient(circle, #08203e, #145277, #557c93)
 		display: grid
 		place-content: center
 		align-items: center
 		height: 80px
 		padding: 0 20px
 		width: 100vw
-
-		ul
-			list-style-type: none
-			color: white
-			display: flex
-			align-items: center
-			justify-content: center
-			gap: min(30px, 3.5vw)
-
-			a
-				color: #fff
-				text-decoration: none
-				font-size: min(4.5vw, 1.3rem)
-				font-family: $Ubuntu
-				position: relative
-				&:hover
-					color: $navlink-color
-
-				&::after
-					content: ''
-					position: absolute
-					bottom: -8px
-					display: block
-					width: 0
-					height: 3px
-					background-color: $navlink-color
-					transition: width 0.3s
-				&:hover::after
-					width: 100%
-
+	ul
+		list-style-type: none
+		color: white
+		display: flex
+		align-items: center
+		justify-content: center
+		gap: min(30px, 3.5vw)
+		a
+			color: #fff
+			text-decoration: none
+			font-size: min(4.5vw, 1.3rem)
+			font-family: $Ubuntu
+			position: relative
+			&:hover
+				color: $navlink-color
+			&::after
+				content: ''
+				position: absolute
+				bottom: -8px
+				display: block
+				width: 0
+				height: 3px
+				background-color: $navlink-color
+				transition: width 0.3s
+			&:hover::after
+				width: 100%
 	.alternate-topnav
-		background-color: white
+		@extend .topnav
+		background: white
 		border-bottom: 5px solid $alternate-navlink-color
-		display: grid
-		place-content: center
-		align-items: center
-		height: 80px
-		padding: 0 20px
-		width: 100vw
-
 		ul
-			list-style-type: none
-			color: white
-			display: flex
-			align-items: center
-			justify-content: center
-			gap: min(30px, 3.5vw)
-
+			@extend	ul
 			a
 				color: #000
-				text-decoration: none
-				font-size: min(4.5vw, 1.3rem)
-				font-family: $Ubuntu
-				position: relative
 				&:hover
 					color: $alternate-navlink-color
-
 				&::after
-					content: ''
-					position: absolute
-					bottom: -8px
-					display: block
-					width: 0
-					height: 3px
 					background-color: $alternate-navlink-color
-					transition: width 0.3s
-				&:hover::after
-					width: 100%
-	// @media(min-width: 768px )
-	// .topnav
-	// 	ul
-	// 		display: flex
+
+.show
+	@include navbar-position
+	@include navbar-style
+
+.hidden
+	transform: translateY(-100%)
+	@extend .show
