@@ -8,27 +8,26 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ aboutRef }) => {
 	const navbarRef = useRef<HTMLDivElement>(null);
 	const topNavRef = useRef<HTMLUListElement>(null);
-	const [showNavbar, setShowNavbar] = useState<boolean>(true);
+	const [showNavbar, setShowNavbar] = useState<boolean>(true)
+	const [navClass, setNavClass] = useState<string>('topnav')
 
 	useEffect(() => {
 		const handleScroll = () => {
 
 			if (navbarRef.current && aboutRef.current) {
 
-				const navbarHeight = navbarRef.current.offsetHeight;
 				const aboutTop = aboutRef.current.offsetTop;
-				const distanceBeforeHide = 350
-				// if the scroll position is between aboutTop and aboutTop - distanceBeforeHide then hide the navbar
-				if (window.scrollY + navbarHeight > aboutTop - distanceBeforeHide && window.scrollY + navbarHeight < aboutTop) {
-					setShowNavbar(false);
+				const distanceBeforeHide = 230
+				// *S if the scroll position is between aboutTop and distanceBeforeHide then hide the navbar
+				if (window.scrollY > distanceBeforeHide && window.scrollY < aboutTop) {
+					// * if showNavbar is true then change it to false ---- this technique save us from the continous use of 'setState' function 
+					showNavbar && setShowNavbar(false);
 				} else {
-					setShowNavbar(true);
+					// *  if showNavbar is not true then update the showNavbar to true
+					!showNavbar && setShowNavbar(true)
 				}
-				if (window.scrollY + navbarHeight >= aboutTop && topNavRef.current) {
-					topNavRef.current.className = 'alternate-topnav'
-				} else if (window.scrollY + navbarHeight < aboutTop && topNavRef.current) {
-					topNavRef.current.className = 'topnav'
-				}
+				// * if the scroll position is greater than equals to aboutTop then change the class of the navbar
+				topNavRef.current && setNavClass(window.scrollY >= aboutTop ? 'alternate-topnav' : 'topnav')
 			}
 		};
 
@@ -36,12 +35,12 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef }) => {
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
-	}, [aboutRef]);
+	}, [aboutRef, showNavbar]);
 
 	return (
 
-		<header ref={navbarRef} style={!showNavbar ? { display: 'none' } : { display: 'block' }}> {/* if showNavbar is false then display : none to hide the navbar  */}
-			<nav className="topnav" ref={topNavRef}>
+		<header ref={navbarRef} className={!showNavbar ? 'hidden' : 'show'}> {/* if showNavbar is false then class is 'hidden' else 'show'  */}
+			<nav className={navClass} ref={topNavRef}>
 				<ul>
 					<li><a href="#home">Home</a></li>
 					<li><a href="#about">About</a></li>
