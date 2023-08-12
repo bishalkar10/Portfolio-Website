@@ -36,7 +36,7 @@ const About: React.FC<AboutProps> = ({ aboutRef }) => {
 						</div>
 					</div>
 
-					<a href='/Gain Prasad Kar Resume.pdf' className="resume" download>Download Resume</a>
+					<a href='documents/Gain Prasad Kar Resume.pdf' className="resume" download>Download Resume</a>
 				</div>
 			</div>
 		</section>
