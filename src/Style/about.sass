@@ -8,7 +8,7 @@
 #about
   // height: 100vh
   min-height: 100vh
-  padding: 60px 0
+  padding: 3.75rem 0
   background-color: #141414
   color: white
 
@@ -16,9 +16,9 @@
     display: flex
     flex-direction: column
     width: 95%
-    margin: 20px auto
-    gap: 40px
-    @media(min-width: 540px )
+    margin: 1.25rem auto
+    gap: 2.5rem
+    @media(min-width: 33.75rem ) // 540px
       width: 85%
     h3
       @include font-styles( $JosefinSans, 2rem , white )
@@ -31,47 +31,48 @@
       figure
         width: 100%
         display: flow-root // if text in figcaption is less then we might get some problem
-        padding: 10px
+        padding: 0.75rem
         .my-photo
-          height: 150px
-          width: 150px
+          height: 10rem
+          aspect-ratio: 1/1
           border-radius: 50%
-          margin-right: 10px
+          margin-right: 0.75rem
           float: left
           display: block
         figcaption
-          @include font-styles( $CrimsonText, 1.25rem , #dadada )
+          @include font-styles( $Ubuntu, 1.25rem , #dadada )
+          line-height: 2rem
 
     .education
       margin: 0 auto
       width: 100%
-      min-width: 340px
-      max-width: 400px
+      min-width: 20rem
+      max-width: 25rem
       display: flex
       flex-direction: column
-      gap: 20px
-      @media ( min-width: 540px )
-        max-width: 450px
+      gap: 1.25rem
+      @media(min-width: 33.75rem ) // 540px
+        max-width: 28rem
       h4
         font-size: 1.1rem
         font-family: $JosefinSans
-        @media (min-width: 540px)
+        @media(min-width: 33.75rem ) // 540px
           font-size: 1.4rem
 
       span
-        @include font-styles($Verdana, 12px ,#dadada )
+        @include font-styles($JosefinSans, 0.75rem ,#dadada )
         font-weight: normal
         float: right
         font-style: italic
 
       p
-        @include font-styles($Verdana, 1rem ,#dadada )
-        padding-left: 30px
+        @include font-styles($JosefinSans, 1rem ,#dadada )
+        padding-left: 2rem
 
     .resume
-      @include font-styles($RobotoCondensed, 1.2rem, #fff)
+      @include font-styles($Roboto, 1.2rem, #fff)
       background-color: #006dc7
-      padding: 15px 20px
+      padding: 1rem 1.25rem
       margin: auto
       display: grid
       place-content: center
