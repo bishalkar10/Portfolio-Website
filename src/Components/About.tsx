@@ -25,7 +25,7 @@ const About: React.FC<AboutProps> = ({ aboutRef }) => {
                 confident than I can take a design and convert it into a
                 pixel-perfect web application. I can consume backend APIs using
                 axios and integrate them in the Frontend side.
-                <br /> <br />I am procient in version control using git and
+                <br /> <br />I am proficient in version control using git and
                 github, which make me able to work effectively in a team. I
                 prefer Tailwindcss framework for styling web pages as it gives
                 me the freedom with convinence to style responsive web pages. I
