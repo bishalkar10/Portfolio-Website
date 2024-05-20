@@ -17,23 +17,23 @@ const About: React.FC<AboutProps> = ({ aboutRef }) => {
             <figure>
               <img className="my-photo" src="images/my_photo.jpg" alt="" />
               <figcaption>
-                I'm an extremely ambitious and pasionate software engineer. I am
-                proficient in developing responsive web application using HTML5,
-                CSS3, Javascript, ReactJs, Sass, Tailwindcss. I have deployed my
-                works on Github Pages and Netlify. I use vite.js, which is
-                several times faster then the old and slow webpack. I am
-                confident than I can take a design and convert it into a
+                I'm an extremely ambitious and passionate software engineer. I
+                am proficient in developing responsive web applications using
+                HTML5, CSS3, Javascript, ReactJs, Sass, and Tailwind CSS. I have
+                deployed my work on GitHub Pages and Netlify. I use vite.js,
+                which is several times faster than the old and slow webpack. I
+                am confident that I can take a design and convert it into a
                 pixel-perfect web application. I can consume backend APIs using
                 axios and integrate them in the Frontend side.
-                <br /> <br />I am proficient in version control using git and
-                github, which make me able to work effectively in a team. I
-                prefer Tailwindcss framework for styling web pages as it gives
-                me the freedom with convinence to style responsive web pages. I
+                <br /> <br />I am proficient in version control using Git and
+                Git Hub, which makes me able to work effectively in a team. I
+                prefer Tailwind CSS framework for styling web pages as it gives
+                me the freedom with convenience to style responsive web pages. I
                 have decent experience with SASS/SCSS too (this website is
                 styled with SASS 😉). I familiar with Browser Developer Tools,
-                which I use on a daily basis for debugging purposes. I have
-                plenty of painful experienced debugging CSS. I am currently
-                learning e2e testing using Playwright testing framework.
+                which I use daily for debugging purposes. I have plenty of
+                painful experience debugging CSS. I am currently learning e2e
+                testing using the Playwright testing framework.
               </figcaption>
             </figure>
           </div>
