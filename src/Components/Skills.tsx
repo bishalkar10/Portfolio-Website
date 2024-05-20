@@ -3,12 +3,14 @@ import '../Style/skills.sass'
 
 interface SkillCardProps {
   svgPath: string;
+  skillName: string;
 }
-export const SkillCard: FC<SkillCardProps> = ({ svgPath }) => {
+export const SkillCard: FC<SkillCardProps> = ({ svgPath, skillName }) => {
   return (
-    <div className='skill-card'>
+    <figure className='skill-card'>
       <img src={svgPath} alt='skill' />
-    </div>
+      <figcaption>{skillName}</figcaption>
+    </figure>
   )
 }
 
@@ -17,17 +19,17 @@ const Skills = () => {
     <section id='skills'>
       <h2 className='title'>Skills</h2>
       <div className='skill-grid'>
-        <SkillCard svgPath={'svg/html.svg'} />
-        <SkillCard svgPath={'svg/css.svg'} />
-        <SkillCard svgPath={'svg/javascript.svg'} />
-        <SkillCard svgPath={'svg/react.svg'} />
-        <SkillCard svgPath={'svg/tailwindcss.svg'} />
-        <SkillCard svgPath={'svg/sass.svg'} />
-        <SkillCard svgPath={'svg/vitejs.svg'} />
-        <SkillCard svgPath={'svg/python.svg'} />
-        <SkillCard svgPath={'svg/vscode.svg'} />
-        <SkillCard svgPath={'svg/git.svg'} />
-        <SkillCard svgPath={'svg/github.svg'} />
+        <SkillCard svgPath={'svg/html.svg'} skillName='HTML'/>
+        <SkillCard svgPath={'svg/css.svg'} skillName='CSS' />
+        <SkillCard svgPath={'svg/javascript.svg'} skillName='JavaScript' />
+        <SkillCard svgPath={'svg/react.svg'} skillName='React' />
+        <SkillCard svgPath={'svg/tailwindcss.svg'} skillName='TailwindCSS' />
+        <SkillCard svgPath={'svg/sass.svg'} skillName='Sass' />
+        <SkillCard svgPath={'svg/vitejs.svg'} skillName='ViteJS' />
+        <SkillCard svgPath={'svg/python.svg'} skillName='Python' />
+        <SkillCard svgPath={'svg/vscode.svg'} skillName='VSCode' />
+        <SkillCard svgPath={'svg/git.svg'} skillName='Git' />
+        <SkillCard svgPath={'svg/github.svg'} skillName='GitHub' />
       </div>
     </section>
   )
