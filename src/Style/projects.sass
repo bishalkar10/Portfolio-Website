@@ -19,7 +19,7 @@ $border-radius: 0.5rem
   display: none
   place-content: center
   min-height: 12.5rem
-  width: 22rem
+  width: min(100%, 22rem)
   flex-shrink: 0
   border-radius: $border-radius
   font-family: Ubuntu,sans-serif
@@ -60,7 +60,7 @@ $border-radius: 0.5rem
         flex-direction: column
         justify-content: space-around
         height: 100%
-        width: 22rem
+        width: min(100%, 22rem)
         gap: 1.25rem
 
         .figure
@@ -78,7 +78,7 @@ $border-radius: 0.5rem
           .image
             border-radius: $border-radius
             aspect-ratio: 350/197 // original aspect-ratio of the images
-            width: 22rem
+            width: 100%
           .name
             font-size: 1.25em
             font-family: $JosefinSans
