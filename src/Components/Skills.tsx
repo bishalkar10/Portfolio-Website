@@ -23,7 +23,7 @@ const Skills = () => {
         <SkillCard svgPath={"svg/css.svg"} skillName="CSS" />
         <SkillCard svgPath={"svg/javascript.svg"} skillName="JavaScript" />
         <SkillCard svgPath={"svg/react.svg"} skillName="React" />
-        <SkillCard svgPath={"svg/redux-toolkit.svg"} skillName="React" />
+        <SkillCard svgPath={"svg/redux-toolkit.svg"} skillName="Redux" />
         <SkillCard svgPath={"svg/tailwindcss.svg"} skillName="TailwindCSS" />
         <SkillCard svgPath={"svg/sass.svg"} skillName="Sass" />
         <SkillCard svgPath={"svg/vitejs.svg"} skillName="ViteJS" />

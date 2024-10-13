@@ -8,6 +8,7 @@ import {
 const HomePage = () => {
   return (
     <section id="home">
+      <div className="animated-background"></div>
       <div className="main-div">
         <h1>Gain Prasad Kar</h1>
         <p>Software Engineer | FrontEnd Developer | ReactJS Developer</p>
@@ -23,7 +24,7 @@ const HomePage = () => {
             </a>
           </li>
           <li>
-            <a target="_blank" href="mailto:bishalkar10">
+            <a target="_blank" href="mailto:bishalkar10@gmail.com">
               <FontAwesomeIcon className="icon" icon={faEnvelope} />
             </a>
           </li>

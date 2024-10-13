@@ -3,7 +3,22 @@
 #home
   height: 100vh
   min-height: 100vh
-  background: radial-gradient(circle, #08203e,#145277, #557c93)
+  position: relative
+  overflow: hidden  
+
+  &::before
+    content: ''
+    z-index: -1
+    position: absolute
+    /* make the width 2x of the parent container so we don't see the sharp conrner of this element */
+    width: 200% 
+    aspect-ratio: 1/1
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    transform-origin: 50% 49%
+    background: conic-gradient(from 180deg at 50% 49%, $primary-color, $secondary-color, $primary-color)
+    animation: rotateInfinite 40s -0.5s linear infinite
 
   .main-div
     display: grid
@@ -23,7 +38,7 @@
       text-align: center
       margin: 0.75rem 0 2.5rem 0
 
-    .faIcons
+    ul.faIcons
       list-style-type: none
       display: flex
       gap: 2rem
@@ -31,13 +46,37 @@
       .icon
         color: white
         font-size: 2rem
+        padding: 10px
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 16px 16px rgba(0, 0, 0, 0.15)
+        border-radius: 50%
+        transition: background-color 0.2s linear
 
+
+    ul.faIcons li
+      perspective: 38px
+      a 
+        display: block
+        transform-style: preserve-3d
+        transform: rotateX(45deg)
+        transition: transform 0.3s linear
+      &:hover a
+        transform: rotateX(0deg)
+      &:hover .icon
+        background-color: rgba(255, 255, 255, 0.1)
     .down-icon-link
       position: absolute
       bottom: 0
       left: 50%
       transform: translateX(-50%)
       margin-bottom: 2rem
-    .icon
-      color: white
-      font-size: 3rem
+      .icon
+        color: white
+        font-size: 3rem
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 16px 16px rgba(0, 0, 0, 0.15)
+        border-radius: 50%
+
+@keyframes rotateInfinite 
+  0% 
+    transform: translate(-50%, -50%) rotate(0deg) 
+  100% 
+    transform: translate(-50%, -50%) rotate(360deg) 

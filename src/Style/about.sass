@@ -9,7 +9,7 @@
   // height: 100vh
   min-height: 100vh
   padding: 3.75rem 0
-  background-color: #141414
+  background-color: $primary-color
   color: white
 
   .about-me
@@ -71,10 +71,37 @@
 
     .resume
       @include font-styles($Roboto, 1.2rem, #fff)
-      background-color: #006dc7
+      background: linear-gradient(to bottom,$secondary-color, darken($secondary-color, 20%))
       padding: 1rem 1.25rem
       margin: auto
       display: grid
       place-content: center
       text-decoration: none
-      border-radius: 5px
+      border-radius: 10px
+      transform: scale(0.80) rotateY(-30deg) rotateX(45deg) translateZ(2rem)
+      transform-origin: 50% 100%
+      transform-style: preserve-3d
+      box-shadow: 1rem 1rem 3rem 0 rgba(0, 0, 0, 0.2)
+      transition: 0.6s ease transform
+
+      &:hover 
+        transform: scale(1)      
+
+      &::after 
+        content: " "
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        border-radius: 10px
+        transition: all 0.6s ease
+
+      &::after 
+        transform: translateZ(-2rem)
+        background: white
+        box-shadow: 1rem 1rem 3rem 0 rgba(0, 0, 0, 0.2)
+        &:hover 
+          transform: translateZ(0)
+     
