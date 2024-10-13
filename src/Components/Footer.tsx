@@ -14,7 +14,7 @@ const Footer = () => {
           <a target="_blank" href="https://www.github.com/bishalkar10">
             <FontAwesomeIcon icon={faGithub} />
           </a>
-          <a target="_blank" href="mailto:bishalkar10">
+          <a target="_blank" href="mailto:bishalkar10@gmail.com">
             <FontAwesomeIcon icon={faEnvelope} />
           </a>
         </div>
