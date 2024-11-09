@@ -41,7 +41,7 @@ const About: React.FC<AboutProps> = ({ aboutRef }) => {
           <div className="education">
             <div>
               <h4>
-                Bankura University <span className="year">(2020-)</span>
+                Bankura University <span className="year">(2024)</span>
               </h4>
               <p className="course">B.A - English Honors</p>
             </div>
@@ -51,6 +51,23 @@ const About: React.FC<AboutProps> = ({ aboutRef }) => {
               </h4>
               <p className="course">Arts</p>
             </div>
+          </div>
+          <h3>Experience</h3>
+          <div className="experience">
+            <div>
+              <h4>
+                Klenty <span className="year">(Sep 2023 - Present)</span>
+              </h4>
+              <p className="role">SDE Intern</p>
+            </div>
+            <p className="details">
+              As an SDE intern, I’ve actively contributed to enhancing user
+              experience by building new features and resolving bugs. This role
+              has given me valuable, hands-on experience in a professional work
+              environment. My tech stack includes JavaScript, TypeScript, React,
+              Redux, and CSS Modules. I’ve also utilized tools like Jira to
+              manage tasks and workflows efficiently.
+            </p>
           </div>
 
           <a

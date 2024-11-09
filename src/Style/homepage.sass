@@ -4,21 +4,21 @@
   height: 100vh
   min-height: 100vh
   position: relative
-  overflow: hidden  
+  overflow: hidden
 
   &::before
     content: ''
     z-index: -1
     position: absolute
     /* make the width 2x of the parent container so we don't see the sharp conrner of this element */
-    width: 200% 
+    width: 200%
     aspect-ratio: 1/1
     left: 50%
     top: 50%
     transform: translate(-50%, -50%)
     transform-origin: 50% 49%
     background: conic-gradient(from 180deg at 50% 49%, $primary-color, $secondary-color, $primary-color)
-    animation: rotateInfinite 40s -0.5s linear infinite
+    // animation: rotateInfinite 40s -0.5s linear infinite
 
   .main-div
     display: grid
@@ -54,10 +54,10 @@
 
     ul.faIcons li
       perspective: 38px
-      a 
+      a
         display: block
         transform-style: preserve-3d
-        transform: rotateX(45deg)
+        transform: rotateX(30deg)
         transition: transform 0.3s linear
       &:hover a
         transform: rotateX(0deg)
@@ -75,8 +75,8 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 16px 16px rgba(0, 0, 0, 0.15)
         border-radius: 50%
 
-@keyframes rotateInfinite 
-  0% 
-    transform: translate(-50%, -50%) rotate(0deg) 
-  100% 
-    transform: translate(-50%, -50%) rotate(360deg) 
+@keyframes rotateInfinite
+  0%
+    transform: translate(-50%, -50%) rotate(0deg)
+  100%
+    transform: translate(-50%, -50%) rotate(360deg)
