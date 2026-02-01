@@ -17,57 +17,129 @@ const About: React.FC<AboutProps> = ({ aboutRef }) => {
             <figure>
               <img className="my-photo" src="images/my_photo.jpg" alt="" />
               <figcaption>
-                I'm an extremely ambitious and passionate software engineer. I
-                am proficient in developing responsive web applications using
-                HTML5, CSS3, Javascript, ReactJs, Sass, and Tailwind CSS. I have
-                deployed my work on GitHub Pages and Netlify. I use vite.js,
-                which is several times faster than the old and slow webpack. I
-                am confident that I can take a design and convert it into a
-                pixel-perfect web application. I can consume backend APIs using
-                axios and integrate them in the Frontend side.
-                <br /> <br />I am proficient in version control using Git and
-                Git Hub, which makes me able to work effectively in a team. I
-                prefer Tailwind CSS framework for styling web pages as it gives
-                me the freedom with convenience to style responsive web pages. I
-                have decent experience with SASS/SCSS too (this website is
-                styled with SASS 😉). I familiar with Browser Developer Tools,
-                which I use daily for debugging purposes. I have plenty of
-                painful experience debugging CSS. I am currently learning e2e
-                testing using the Playwright testing framework.
+                I’m a frontend developer who actually enjoys the challenge of
+                building things from scratch. While I’m deep into the React
+                ecosystem, I’ve always believed that you can’t be a great
+                engineer without mastering the basics first—plain HTML, CSS, and
+                Modern JavaScript. I’ve spent countless hours in Browser
+                DevTools profiling performance and, honestly, I have plenty of
+                'painful' experience debugging CSS until it’s absolutely
+                pixel-perfect across all screens.
+                <br /> <br />
+                In my time at Klenty and Appscrip, I didn't just lean on
+                frameworks; I focused on raw performance. I once managed to
+                speed up a chatbot's initial load time by 6000% just by being
+                smart with how the code was structured and delivered. Whether
+                it’s architecting complex logic in vanilla JS or building
+                responsive layouts without relying on bulky UI libraries, I love
+                the feeling of shipping code that’s fast, accessible, and clean
+                under the hood. I prefer keeping things modular and scalable,
+                often using CSS Modules or raw CSS to maintain full control over
+                the styling.
               </figcaption>
             </figure>
           </div>
-          <h3>Education</h3>
+          
+          <h3>EXPERIENCE</h3>
+          <div className="experience-items">
+            <div className="experience">
+              <div>
+                <h4>
+                  APPSCRIP <span className="year">(Dec 2023 - Present)</span>
+                </h4>
+                <p className="role">Frontend Developer</p>
+                <ul className="details">
+                  <li>
+                    Utilized <strong>Stencil.js</strong> to create an{" "}
+                    <strong>embedded</strong> application that can be used in
+                    any major framework like{" "}
+                    <strong>Angular, React, Vue,</strong> or{" "}
+                    <strong>Vanilla Javascript</strong>.
+                  </li>
+                  <li>
+                    Implemented <strong>jwt authentication</strong> in the
+                    embedded stencil.js project.
+                  </li>
+                  <li>
+                    Optimized initial load times of the chatbot application by{" "}
+                    <strong>6000%</strong>.
+                  </li>
+                  <li>
+                    Integrated 1-to-1 chat using <strong>MQTT SDK</strong> and
+                    video calling using <strong>Livekit SDK</strong>.
+                  </li>
+                  <li>
+                    Developed a robust authentication layer in Next.js using{" "}
+                    <strong>Supabase</strong>, featuring{" "}
+                    <strong>Google OAuth</strong> and secure email/password
+                    flows.
+                  </li>
+                  <li>
+                    Streamlined user onboarding by implementing{" "}
+                    <strong>Google Login</strong> integration via
+                    react-oauth/google within Next.js.
+                  </li>
+                  <li>
+                    Collaborated with Designers and transformed Figma Design to
+                    reusable pixel-perfect React components.
+                  </li>
+                  <li>
+                    Enhanced e-commerce search UX by integrating{" "}
+                    <strong>Typesense</strong> for ultra-fast, low-latency
+                    product indexing and retrieval.
+                  </li>
+                  <li>
+                    Implemented global accessibility by architecting a scalable{" "}
+                    <strong>i18n (Internationalization)</strong> strategy for
+                    multi-lingual content delivery.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="experience">
+              <div>
+                <h4>
+                  KLENTY <span className="year">(Sep 2022 - Nov 2023)</span>
+                </h4>
+                <p className="role">Frontend Developer</p>
+                <ul className="details">
+                  <li>
+                    Worked on a sales <strong>SaaS</strong> used by{" "}
+                    <strong>5000+</strong> companies.
+                  </li>
+                  <li>
+                    <strong>Collaborated</strong> within a cross-functional team
+                    of 7 to drive feature delivery and ensure product quality.
+                  </li>
+                  <li>
+                    Diagnosed and resolved a{" "}
+                    <strong>critical pagination bug</strong> affecting multiple
+                    sections of the platform.
+                  </li>
+                  <li>
+                    Utilized <strong>Redux Toolkit</strong> to create a{" "}
+                    <strong>toast notification</strong> system, integrated
+                    seamlessly into two products within a{" "}
+                    <strong>micro-frontend architecture</strong>.
+                  </li>
+                  <li>
+                    Worked closely with designers to update the website during
+                    app logo and theme change.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <h3>EDUCATION</h3>
           <div className="education">
             <div>
               <h4>
-                Bankura University <span className="year">(2024)</span>
+                Bankura University <span className="year">(2019 - 2022)</span>
               </h4>
-              <p className="course">B.A - English Honors</p>
+              <p className="course">B.A</p>
             </div>
-            <div>
-              <h4>
-                Kamalpur Netaji High School <span className="year">(2020)</span>
-              </h4>
-              <p className="course">Arts</p>
-            </div>
-          </div>
-          <h3>Experience</h3>
-          <div className="experience">
-            <div>
-              <h4>
-                Klenty <span className="year">(Sep 2023 - Present)</span>
-              </h4>
-              <p className="role">SDE Intern</p>
-            </div>
-            <p className="details">
-              As an SDE intern, I’ve actively contributed to enhancing user
-              experience by building new features and resolving bugs. This role
-              has given me valuable, hands-on experience in a professional work
-              environment. My tech stack includes JavaScript, TypeScript, React,
-              Redux, and CSS Modules. I’ve also utilized tools like Jira to
-              manage tasks and workflows efficiently.
-            </p>
           </div>
 
           <a

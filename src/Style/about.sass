@@ -73,17 +73,55 @@
       p
         @include font-styles($JosefinSans, 1rem ,#dadada )
         padding-left: 2rem
+    .experience-items
+        display: flex
+        flex-direction: column
+        gap: 3rem
+        margin: 0 auto
+        width: 100%
+
     .experience
-        @extend .education
+        margin: 0 auto
+        width: 100%
+        display: flex
+        flex-direction: column
+        gap: 1.25rem
+        
+        h4
+            font-size: 1.1rem
+            font-family: $JosefinSans
+            @media(min-width: 33.75rem )
+                font-size: 1.4rem
+
+        span
+            @include font-styles($JosefinSans, 1rem ,#dadada )
+            font-weight: normal
+            float: right
+            font-style: italic
+
         .role
             @include font-styles($JosefinSans, 1rem ,#dadada )
-            padding-left: 2rem
+            padding-left: 1rem
+            margin: 0.5rem 0
+            font-style: italic
+
         .details
             @include font-styles( $Ubuntu, 1rem , #dadada )
             line-height: 1.5rem
+            padding-left: 1.5rem
+            list-style-type: disc
+            display: flex
+            flex-direction: column
+            gap: 0.5rem
             @media (min-width: 1024px)
-                @include font-styles( $Ubuntu, 1.25rem , #dadada )
-                line-height: 2rem
+                @include font-styles( $Ubuntu, 1.15rem , #dadada )
+                line-height: 1.8rem
+            
+            li
+                margin-bottom: 0.5rem
+                strong
+                    color: white
+                    font-weight: 600
 
     .resume
       @include font-styles($Roboto, 1.2rem, #fff)
