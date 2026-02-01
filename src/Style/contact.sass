@@ -1,4 +1,5 @@
-@import 'index.sass'
+@use "sass:color"
+@use 'index' as *
 
 @mixin input
   min-width: 100%
@@ -49,5 +50,5 @@
       box-shadow: 0 5px 3px rgba(0,0,0,0.3)
       font-family: $Roboto
       &:active
-        background-color: lighten($primary-color, 10%)
+        background-color: color.adjust($primary-color, $lightness: 10%)
         
