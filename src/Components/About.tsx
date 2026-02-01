@@ -142,13 +142,13 @@ const About: React.FC<AboutProps> = ({ aboutRef }) => {
             </div>
           </div>
 
-          <a
+          {/* <a
             href="documents/Gain Prasad Kar Resume.pdf"
             className="resume"
             download
           >
             Download Resume
-          </a>
+          </a> */}
         </div>
       </div>
     </section>

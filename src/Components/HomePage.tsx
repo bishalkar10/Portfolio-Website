@@ -1,6 +1,6 @@
 import "../Style/homepage.sass";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faEnvelope,
   faCircleChevronDown,
@@ -13,11 +13,11 @@ const HomePage = () => {
         <h1>Gain Prasad Kar</h1>
         <p>Software Engineer | FrontEnd Developer | ReactJS Developer</p>
         <ul className="faIcons">
-          <li>
+          {/* <li>
             <a target="_blank" href="https://www.linkedin.com/in/gain-kar">
               <FontAwesomeIcon className="icon" icon={faLinkedinIn} />
             </a>
-          </li>
+          </li> */}
           <li>
             <a target="_blank" href="https://www.github.com/bishalkar10">
               <FontAwesomeIcon className="icon" icon={faGithub} />

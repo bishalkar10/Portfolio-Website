@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "../Style/footer.sass";
 const Footer = () => {
@@ -8,9 +8,9 @@ const Footer = () => {
       <div className="footer-content">
         <p>&copy; 2023 Gain Prasad Kar. All rights reserved.</p>
         <div className="icons-div">
-          <a target="_blank" href="https://www.linkedin.com/in/gain-kar">
+          {/* <a target="_blank" href="https://www.linkedin.com/in/gain-kar">
             <FontAwesomeIcon icon={faLinkedinIn} />
-          </a>
+          </a> */}
           <a target="_blank" href="https://www.github.com/bishalkar10">
             <FontAwesomeIcon icon={faGithub} />
           </a>

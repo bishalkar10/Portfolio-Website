@@ -47,7 +47,7 @@ const Project = () => {
     {
       imgPath: "./images/portfolio_website.jpg",
       githubURL: "https://github.com/bishalkar10/Portfolio-Website",
-      demoURL: "https://bishalkar10.github.io/Portfolio-Website/",
+      demoURL: "https://gain-prasad-kar.netlify.app/",
       name: "Portfolio Website",
       description:
         "This is my personal portfolio website you are looking at. I have used HTML5, Sass, React.js, Typescript, to build this. I have made it mobile responsive so you can see it in any size of screen.",
