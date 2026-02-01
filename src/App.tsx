@@ -9,7 +9,7 @@ import { useRef } from 'react'
 
 function App() {
 
-  const aboutRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLElement>(null!);
 
   return (
     <>

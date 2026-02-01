@@ -2,7 +2,7 @@ import "../Style/about.sass";
 import React from "react";
 
 interface AboutProps {
-  aboutRef: React.RefObject<HTMLDivElement>;
+  aboutRef: React.RefObject<HTMLElement>;
 }
 
 const About: React.FC<AboutProps> = ({ aboutRef }) => {

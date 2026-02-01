@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../Style/navbar.sass';
 
 interface NavbarProps {
-	aboutRef: React.RefObject<HTMLDivElement>;
+	aboutRef: React.RefObject<HTMLElement>;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ aboutRef }) => {
