@@ -15,7 +15,7 @@ const About: React.FC<AboutProps> = ({ aboutRef }) => {
           <h3>Profile</h3>
           <div className="profile">
             <figure>
-              <img className="my-photo" src="images/my_photo.jpg" alt="" />
+              <img className="my-photo" src="images/my_photo.webp" alt="Image of Gain Prasad Kar" />
               <figcaption>
                 I’m a frontend developer who actually enjoys the challenge of
                 building things from scratch. While I’m deep into the React
