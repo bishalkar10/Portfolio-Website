@@ -5,7 +5,7 @@ const projects = [
     title: "Movie Discovery App",
     description:
       "A modern movie discovery application with advanced filtering, watchlist management, and personalized recommendations.",
-    image: "/Portfolio-Website/images/movie_app.jpg",
+    image: "/Portfolio-Website/images/movie_app.webp",
     tech: ["Next.js", "TypeScript", "TMDB API", "Tailwind"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/bishalkar10",
@@ -14,7 +14,7 @@ const projects = [
     title: "Currency Globe",
     description:
       "A currency converter with support for 150+ currencies, historical rates, and interactive visualizations.",
-    image: "/Portfolio-Website/images/currency_globe.jpg",
+    image: "/Portfolio-Website/images/currency_globe.webp",
     tech: ["React", "Redux", "D3.js", "Node.js"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/bishalkar10",
@@ -23,7 +23,7 @@ const projects = [
     title: "Image Gallery",
     description:
       "A beautiful image gallery with infinite scroll, lightbox view, and advanced search capabilities.",
-    image: "/Portfolio-Website/images/image_gallery.png",
+    image: "/Portfolio-Website/images/image_gallery.webp",
     tech: ["React", "Masonry Layout", "Unsplash API"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/bishalkar10",
