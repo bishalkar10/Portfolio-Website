@@ -64,7 +64,7 @@ function Header() {
         </nav>
 
         <a
-          href="/Portfolio-Website/documents/resume.pdf"
+          href="/Portfolio-Website/documents/Gain Prasad Kar Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="nav-cta"
