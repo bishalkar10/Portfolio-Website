@@ -5,7 +5,7 @@ function Footer() {
     <footer className="footer">
       <div className="container footer-container">
         <p className="footer-text">
-          © {currentYear} Bishal Kar. Crafted with ❤️ and lots of ☕
+          © {currentYear} Gain Prasad Kar. Crafted with ❤️ and lots of ☕
         </p>
 
         <div className="footer-social">

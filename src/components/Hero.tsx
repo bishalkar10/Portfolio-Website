@@ -3,7 +3,7 @@ import { useRef } from "react";
 // Code editor content - clean and professional
 const codeLines = [
   { type: "keyword", content: "const", rest: " developer = {" },
-  { type: "property", indent: 1, content: "name:", value: '"Bishal Kar",' },
+  { type: "property", indent: 1, content: "name:", value: '"Gain Prasad Kar",' },
   { type: "property", indent: 1, content: "role:", value: '"Frontend Developer",' },
   { type: "property", indent: 1, content: "location:", value: '"India",' },
   { type: "property", indent: 1, content: "experience:", value: '"1+ years",' },
@@ -86,7 +86,7 @@ function Hero() {
               <span style={{ animationDelay: '0.6s' }}>Hi, I'm </span>
             </span>
             <span className="hero-title-line">
-              <span className="gradient-text" style={{ animationDelay: '0.7s' }}>Bishal Kar</span>
+              <span className="gradient-text" style={{ animationDelay: '0.7s' }}>Gain Prasad Kar</span>
             </span>
             <span className="hero-title-line">
               <span style={{ animationDelay: '0.8s' }}>Frontend Developer</span>

@@ -85,7 +85,7 @@ function About() {
           <div className="about-image-wrapper" data-reveal="right">
             <img
               src="/Portfolio-Website/images/my_photo.webp"
-              alt="Bishal Kar working on a project"
+              alt="Gain Prasad Kar working on a project"
               className="about-image"
               width="500"
               height="600"

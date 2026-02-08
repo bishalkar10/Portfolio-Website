@@ -43,7 +43,7 @@ function Header() {
       className={`header ${isScrolled ? "scrolled" : ""}`}
     >
       <div className="container header-container">
-        <a href="#" className="logo" aria-label="Bishal Kar - Home">
+        <a href="#" className="logo" aria-label="Gain Prasad Kar - Home">
           Bishal<span className="logo-accent">.</span>
         </a>
 
