@@ -1,30 +1,44 @@
-import Navbar from "./Components/Navbar"
-import HomePage from "./Components/HomePage"
-import About from "./Components/About"
-import Skills from "./Components/Skills"
-import Projects from "./Components/Projects"
-import Contact from "./Components/Contact"
-import Footer from "./Components/Footer"
-import { useRef } from 'react'
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import MouseGlow from "./components/MouseGlow";
+import "./styles/App.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  const mainRef = useRef<HTMLDivElement>(null);
 
-  const aboutRef = useRef<HTMLElement>(null!);
+  useEffect(() => {
+    // Smooth scroll trigger refresh on load
+    ScrollTrigger.refresh();
+    
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
 
   return (
-    <>
-      <Navbar aboutRef={aboutRef} />
+    <div ref={mainRef} className="app">
+      <MouseGlow />
+      <Header />
       <main>
-        <HomePage />
-        <About aboutRef={aboutRef} />
+        <Hero />
+        <About />
         <Skills />
         <Projects />
         <Contact />
       </main>
       <Footer />
-
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
