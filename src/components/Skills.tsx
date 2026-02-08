@@ -1,8 +1,4 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useReveal } from "../hooks/useReveal";
 
 // Individual skills with icon, name, and story for flip card
 const skills = [
@@ -79,40 +75,12 @@ const skills = [
 ];
 
 function Skills() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: ".skills-grid",
-        start: "top 85%",
-        once: true,
-        onEnter: () => {
-          gsap.fromTo(
-            ".skill-card",
-            { opacity: 0, y: 40, rotateY: -15 },
-            {
-              opacity: 1,
-              y: 0,
-              rotateY: 0,
-              duration: 0.6,
-              stagger: 0.05,
-              ease: "power3.out",
-            },
-          );
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  const sectionRef = useReveal();
 
   return (
     <section ref={sectionRef} className="skills section" id="skills">
       <div className="container">
-        <header className="section-header">
+        <header className="section-header" data-reveal>
           <span className="section-label">My Skills</span>
           <h2 className="section-title">
             Technologies I <span className="gradient-text">Work With</span>
@@ -120,8 +88,8 @@ function Skills() {
         </header>
 
         <div className="skills-grid">
-          {skills.map((skill) => (
-            <div key={skill.id} className="skill-card">
+          {skills.map((skill, index) => (
+            <div key={skill.id} className="skill-card" data-reveal="skill" style={{ transitionDelay: `${index * 0.05}s` }}>
               <div className="skill-card-inner">
                 {/* Front side - Icon and Name */}
                 <div className="skill-card-front">

@@ -1,5 +1,4 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { useRef } from "react";
 
 // Code editor content - clean and professional
 const codeLines = [
@@ -14,67 +13,6 @@ const codeLines = [
 
 function Hero() {
   const heroRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 0.5 });
-
-      // Animate badge
-      tl.fromTo(
-        ".hero-badge",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }
-      );
-
-      // Animate title lines
-      tl.fromTo(
-        ".hero-title-line span",
-        { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power3.out" },
-        "-=0.3"
-      );
-
-      // Animate description
-      tl.fromTo(
-        ".hero-description",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
-        "-=0.4"
-      );
-
-      // Animate buttons
-      tl.fromTo(
-        ".hero-actions .btn",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power3.out" },
-        "-=0.3"
-      );
-
-      // Animate code editor
-      tl.fromTo(
-        ".code-editor",
-        { opacity: 0, scale: 0.9, y: 30 },
-        { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "power3.out" },
-        "-=0.6"
-      );
-
-      // Animate code lines with typing effect
-      tl.fromTo(
-        ".code-line",
-        { opacity: 0, x: -20 },
-        { 
-          opacity: 1, 
-          x: 0, 
-          duration: 0.3, 
-          stagger: 0.08, 
-          ease: "power2.out" 
-        },
-        "-=0.4"
-      );
-    }, heroRef);
-
-    return () => ctx.revert();
-  }, []);
 
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
@@ -145,13 +83,13 @@ function Hero() {
 
           <h1 className="hero-title">
             <span className="hero-title-line">
-              <span>Hi, I'm </span>
+              <span style={{ animationDelay: '0.6s' }}>Hi, I'm </span>
             </span>
             <span className="hero-title-line">
-              <span className="gradient-text">Bishal Kar</span>
+              <span className="gradient-text" style={{ animationDelay: '0.7s' }}>Bishal Kar</span>
             </span>
             <span className="hero-title-line">
-              <span>Frontend Developer</span>
+              <span style={{ animationDelay: '0.8s' }}>Frontend Developer</span>
             </span>
           </h1>
 
@@ -162,15 +100,24 @@ function Hero() {
           </p>
 
           <div className="hero-actions">
-            <button className="btn btn-primary" onClick={scrollToContact}>
+            <button className="btn btn-primary" onClick={scrollToContact} style={{ animationDelay: '1.1s' }}>
               <span>Get in Touch</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </button>
-            <button className="btn btn-secondary" onClick={scrollToProjects}>
+            <button className="btn btn-secondary" onClick={scrollToProjects} style={{ animationDelay: '1.2s' }}>
               View Projects
             </button>
+            <a 
+              href="/Portfolio-Website/documents/resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-secondary hero-resume-btn mobile-only-resume"
+              style={{ animationDelay: '1.3s' }}
+            >
+              Resume
+            </a>
           </div>
         </div>
 
@@ -186,8 +133,12 @@ function Hero() {
               <span className="code-editor-title">developer.ts</span>
             </div>
             <div className="code-editor-body">
-              {codeLines.map((line, index) => renderCodeLine(line, index))}
-              <div className="code-line">
+              {codeLines.map((line, index) => (
+                <div key={index} style={{ animationDelay: `${1.2 + index * 0.08}s` }}>
+                  {renderCodeLine(line, index)}
+                </div>
+              ))}
+              <div className="code-line" style={{ animationDelay: `${1.2 + codeLines.length * 0.08}s` }}>
                 <span className="code-cursor" />
               </div>
             </div>

@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import gsap from "gsap";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -15,16 +14,6 @@ function Header() {
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const header = headerRef.current;
-    if (!header) return;
-
-    // Animate header on load
-    gsap.fromTo(
-      header,
-      { y: -100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.2 }
-    );
-
     // Scroll handler
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);

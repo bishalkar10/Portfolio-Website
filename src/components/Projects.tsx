@@ -1,8 +1,4 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useReveal } from "../hooks/useReveal";
 
 const projects = [
   {
@@ -35,33 +31,12 @@ const projects = [
 ];
 
 function Projects() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
-      // Animate project cards
-      ScrollTrigger.create({
-        trigger: ".projects-grid",
-        start: "top 85%",
-        once: true,
-        onEnter: () => {
-          gsap.fromTo(".project-card",
-            { opacity: 0, y: 60 },
-            { opacity: 1, y: 0, duration: 0.7, stagger: 0.15, ease: "power3.out" }
-          );
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  const sectionRef = useReveal();
 
   return (
     <section ref={sectionRef} className="projects section" id="projects">
       <div className="container">
-        <header className="section-header">
+        <header className="section-header" data-reveal>
           <span className="section-label">My Work</span>
           <h2 className="section-title">
             Featured <span className="gradient-text">Projects</span>
@@ -70,7 +45,7 @@ function Projects() {
 
         <div className="projects-grid">
           {projects.map((project, index) => (
-            <article key={index} className="project-card">
+            <article key={index} className="project-card" data-reveal style={{ transitionDelay: `${index * 0.15}s` }}>
               <div className="project-image-wrapper">
                 <img
                   src={project.image}

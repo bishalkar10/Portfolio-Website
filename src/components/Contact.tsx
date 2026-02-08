@@ -1,8 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useState } from "react";
+import { useReveal } from "../hooks/useReveal";
 
 const contactLinks = [
   {
@@ -38,37 +35,13 @@ const contactLinks = [
 ];
 
 function Contact() {
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useReveal();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
-      // Animate contact sections
-      ScrollTrigger.create({
-        trigger: ".contact-wrapper",
-        start: "top 85%",
-        once: true,
-        onEnter: () => {
-          gsap.fromTo(".contact-info",
-            { opacity: 0, x: -50 },
-            { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }
-          );
-          gsap.fromTo(".contact-form-wrapper",
-            { opacity: 0, x: 50 },
-            { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }
-          );
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -89,7 +62,7 @@ function Contact() {
   return (
     <section ref={sectionRef} className="contact section" id="contact">
       <div className="container">
-        <header className="section-header">
+        <header className="section-header" data-reveal>
           <span className="section-label">Get in Touch</span>
           <h2 className="section-title">
             Let's Work <span className="gradient-text">Together</span>
@@ -97,7 +70,7 @@ function Contact() {
         </header>
 
         <div className="contact-wrapper">
-          <div className="contact-info">
+          <div className="contact-info" data-reveal="left">
             <h3>Have a project in mind?</h3>
             <p>
               I'm always open to discussing new opportunities, creative ideas,
@@ -121,7 +94,7 @@ function Contact() {
             </div>
           </div>
 
-          <div className="contact-form-wrapper">
+          <div className="contact-form-wrapper" data-reveal="right">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name" className="form-label">

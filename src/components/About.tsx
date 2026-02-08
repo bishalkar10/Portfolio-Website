@@ -1,8 +1,4 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useReveal } from "../hooks/useReveal";
 
 // Experience data - easily modifiable array
 // Use **keyword** syntax to highlight text
@@ -53,63 +49,12 @@ function renderHighlightedText(text: string) {
 }
 
 function About() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const section = sectionRef.current;
-    
-    // Set initial state
-    gsap.set(section.querySelectorAll(".about-content, .about-image-wrapper, .experience-card"), {
-      opacity: 1,
-      y: 0,
-      x: 0,
-    });
-
-    const ctx = gsap.context(() => {
-      // Animate about content
-      ScrollTrigger.create({
-        trigger: ".about-grid",
-        start: "top 85%",
-        once: true,
-        onEnter: () => {
-          gsap.fromTo(".about-content", 
-            { opacity: 0, x: -50 },
-            { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }
-          );
-          gsap.fromTo(".about-image-wrapper", 
-            { opacity: 0, x: 50 },
-            { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }
-          );
-        },
-      });
-
-      // Animate timeline
-      ScrollTrigger.create({
-        trigger: ".experience-section",
-        start: "top 85%",
-        once: true,
-        onEnter: () => {
-          gsap.fromTo(".timeline-line", 
-            { scaleY: 0, transformOrigin: "top" },
-            { scaleY: 1, duration: 1, ease: "power3.out" }
-          );
-          gsap.fromTo(".timeline-item", 
-            { opacity: 0, x: -30 },
-            { opacity: 1, x: 0, duration: 0.6, stagger: 0.2, ease: "power3.out" }
-          );
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  const sectionRef = useReveal();
 
   return (
     <section ref={sectionRef} className="about section" id="about">
       <div className="container">
-        <header className="section-header">
+        <header className="section-header" data-reveal>
           <span className="section-label">About Me</span>
           <h2 className="section-title">
             Crafting Digital <span className="gradient-text">Experiences</span>
@@ -117,7 +62,7 @@ function About() {
         </header>
 
         <div className="about-grid">
-          <div className="about-content">
+          <div className="about-content" data-reveal="left">
             <p>
               I'm a passionate Frontend Developer with a keen eye for design and
               a love for clean, efficient code. I specialize in building modern
@@ -137,7 +82,7 @@ function About() {
             </p>
           </div>
 
-          <div className="about-image-wrapper">
+          <div className="about-image-wrapper" data-reveal="right">
             <img
               src="/Portfolio-Website/images/my_photo.webp"
               alt="Bishal Kar working on a project"
@@ -152,13 +97,13 @@ function About() {
 
         {/* Experience Timeline Section */}
         <div className="experience-section">
-          <h3 className="subsection-title">
+          <h3 className="subsection-title" data-reveal>
             <span className="gradient-text">Experience</span>
           </h3>
           <div className="timeline">
-            <div className="timeline-line" aria-hidden="true" />
+            <div className="timeline-line" aria-hidden="true" data-reveal />
             {experiences.map((exp, index) => (
-              <div key={index} className="timeline-item">
+              <div key={index} className="timeline-item" data-reveal="left" style={{ transitionDelay: `${index * 0.2}s` }}>
                 <div className="timeline-marker" aria-hidden="true">
                   <div className="timeline-dot" />
                 </div>
