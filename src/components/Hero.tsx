@@ -1,16 +1,15 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-// Skill icons that float around the hero image
-const floatingSkills = [
-  { id: "react", name: "React", position: "top-right" },
-  { id: "typescript", name: "TypeScript", position: "right" },
-  { id: "nextjs", name: "Next.js", position: "bottom-right" },
-  { id: "javascript", name: "JavaScript", position: "bottom" },
-  { id: "vue", name: "Vue.js", position: "bottom-left" },
-  { id: "redux", name: "Redux", position: "left" },
-  { id: "html", name: "HTML", position: "top-left" },
-  { id: "css", name: "CSS", position: "top" },
+// Code editor content - clean and professional
+const codeLines = [
+  { type: "keyword", content: "const", rest: " developer = {" },
+  { type: "property", indent: 1, content: "name:", value: '"Bishal Kar",' },
+  { type: "property", indent: 1, content: "role:", value: '"Frontend Developer",' },
+  { type: "property", indent: 1, content: "location:", value: '"India",' },
+  { type: "property", indent: 1, content: "experience:", value: '"1+ years",' },
+  { type: "property", indent: 1, content: "openToWork:", value: "true," },
+  { type: "close", content: "};" },
 ];
 
 function Hero() {
@@ -51,39 +50,27 @@ function Hero() {
         "-=0.3"
       );
 
-      // Animate visual
+      // Animate code editor
       tl.fromTo(
-        ".hero-image-wrapper",
-        { opacity: 0, scale: 0.8 },
-        { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" },
+        ".code-editor",
+        { opacity: 0, scale: 0.9, y: 30 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "power3.out" },
         "-=0.6"
       );
 
-      // Animate floating skill icons
+      // Animate code lines with typing effect
       tl.fromTo(
-        ".floating-skill",
-        { opacity: 0, scale: 0 },
+        ".code-line",
+        { opacity: 0, x: -20 },
         { 
           opacity: 1, 
-          scale: 1, 
-          duration: 0.5, 
-          stagger: { each: 0.08, from: "random" }, 
-          ease: "back.out(1.7)" 
+          x: 0, 
+          duration: 0.3, 
+          stagger: 0.08, 
+          ease: "power2.out" 
         },
         "-=0.4"
       );
-
-      // Continuous floating animation for skill icons
-      gsap.to(".floating-skill", {
-        y: "random(-8, 8)",
-        x: "random(-5, 5)",
-        rotation: "random(-5, 5)",
-        duration: "random(2, 3)",
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-        stagger: { each: 0.2, from: "random" },
-      });
     }, heroRef);
 
     return () => ctx.revert();
@@ -111,6 +98,40 @@ function Hero() {
         behavior: "smooth",
       });
     }
+  };
+
+  const renderCodeLine = (line: typeof codeLines[number], index: number) => {
+    const indent = "indent" in line ? "  ".repeat(line.indent || 0) : "";
+    
+    if (line.type === "keyword") {
+      return (
+        <div key={index} className="code-line">
+          <span className="code-keyword">{line.content}</span>
+          <span className="code-text">{line.rest}</span>
+        </div>
+      );
+    }
+    
+    if (line.type === "property") {
+      return (
+        <div key={index} className="code-line">
+          <span className="code-text">{indent}</span>
+          <span className="code-property">{line.content}</span>
+          <span className="code-text"> </span>
+          <span className="code-string">{line.value}</span>
+        </div>
+      );
+    }
+    
+    if (line.type === "close") {
+      return (
+        <div key={index} className="code-line">
+          <span className="code-text">{indent}{line.content}</span>
+        </div>
+      );
+    }
+    
+    return null;
   };
 
   return (
@@ -154,30 +175,23 @@ function Hero() {
         </div>
 
         <div className="hero-visual">
-          <div className="hero-image-wrapper">
-            <div className="hero-image-glow" />
-            <img
-              src="/Portfolio-Website/images/my_photo.jpg"
-              alt="Bishal Kar - Frontend Developer"
-              className="hero-image"
-              width="400"
-              height="400"
-              loading="eager"
-            />
-          </div>
-
-          {/* Floating Skill Icons */}
-          {floatingSkills.map((skill) => (
-            <div
-              key={skill.id}
-              className={`floating-skill floating-skill--${skill.position}`}
-              title={skill.name}
-            >
-              <svg className="floating-skill-icon" aria-hidden="true">
-                <use href={`/Portfolio-Website/icons/sprites.svg#icon-${skill.id}`} />
-              </svg>
+          {/* Code Editor Mock */}
+          <div className="code-editor">
+            <div className="code-editor-header">
+              <div className="code-editor-dots">
+                <span className="dot dot--red" />
+                <span className="dot dot--yellow" />
+                <span className="dot dot--green" />
+              </div>
+              <span className="code-editor-title">developer.ts</span>
             </div>
-          ))}
+            <div className="code-editor-body">
+              {codeLines.map((line, index) => renderCodeLine(line, index))}
+              <div className="code-line">
+                <span className="code-cursor" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

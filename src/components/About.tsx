@@ -139,7 +139,7 @@ function About() {
 
           <div className="about-image-wrapper">
             <img
-              src="/Portfolio-Website/images/my_photo.jpg"
+              src="/Portfolio-Website/images/my_photo.webp"
               alt="Bishal Kar working on a project"
               className="about-image"
               width="500"

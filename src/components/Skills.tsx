@@ -4,67 +4,78 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const skillCategories = [
+// Individual skills with icon, name, and story for flip card
+const skills = [
   {
-    title: "Frontend",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <rect x="3" y="3" width="18" height="18" rx="2" />
-        <path d="M3 9h18M9 21V9" />
-      </svg>
-    ),
-    skills: ["React", "TypeScript", "Next.js", "HTML5", "CSS3", "SASS"],
+    id: "html",
+    name: "HTML",
+    story:
+      "Semantic HTML is key for accessibility. I write clean, structured markup that works for everyone.",
   },
   {
-    title: "Styling & UI",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 2v20M2 12h20" />
-      </svg>
-    ),
-    skills: ["Tailwind CSS", "Styled Components", "Framer Motion", "GSAP", "Figma"],
+    id: "css",
+    name: "CSS",
+    story:
+      "From Flexbox to Grid to animations — I love crafting pixel-perfect, responsive designs.",
   },
   {
-    title: "State & Data",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-        <path d="M2 17l10 5 10-5" />
-        <path d="M2 12l10 5 10-5" />
-      </svg>
-    ),
-    skills: ["Redux Toolkit", "RTK Query", "Zustand", "REST APIs", "GraphQL"],
+    id: "tailwindcss",
+    name: "Tailwind",
+    story:
+      "Utility-first CSS for rapid prototyping. Great for maintaining consistency across large projects.",
   },
   {
-    title: "Tools & DevOps",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-      </svg>
-    ),
-    skills: ["Git", "Vite", "Webpack", "Docker", "CI/CD", "Jest"],
+    id: "javascript",
+    name: "JavaScript",
+    story:
+      "The foundation of web dev. Deep understanding of closures, promises, and the event loop.",
   },
   {
-    title: "Testing",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M9 11l3 3L22 4" />
-        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-      </svg>
-    ),
-    skills: ["Playwright", "React Testing Library", "Vitest", "Cypress"],
+    id: "typescript",
+    name: "TypeScript",
+    story:
+      "Type safety is a game-changer. I use TypeScript in all my projects to catch bugs early and improve DX.",
   },
   {
-    title: "Backend Basics",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <path d="M8 21h8M12 17v4" />
-      </svg>
-    ),
-    skills: ["Node.js", "Express", "Python", "PostgreSQL", "MongoDB"],
+    id: "react",
+    name: "React",
+    story:
+      "My go-to library for building UIs. I've built everything from chatbots to e-commerce platforms with React.",
   },
+  {
+    id: "nextjs",
+    name: "Next.js",
+    story:
+      "My framework of choice for production apps. SSR, API routes, and the app router make development a breeze.",
+  },
+  {
+    id: "redux-toolkit",
+    name: "Redux Toolkit",
+    story:
+      "Built toast notification systems and complex state management with RTK Query for data fetching.",
+  },
+  {
+    id: "sass",
+    name: "SASS",
+    story:
+      "Variables, mixins, and nesting make styling maintainable. Used extensively in enterprise projects.",
+  },
+  {
+    id: "git",
+    name: "Git",
+    story:
+      "Version control pro. Comfortable with rebasing, cherry-picking, and managing complex branching strategies.",
+  },
+  // {
+  //   id: "vite",
+  //   name: "Vite",
+  //   story: "Lightning-fast dev server and builds. My choice for new React projects over CRA.",
+  // },
+  // {
+  //   id: "playwright",
+  //   name: "Playwright",
+  //   story: "E2E testing done right. Written comprehensive test suites for production applications.",
+  // },
 ];
 
 function Skills() {
@@ -74,15 +85,22 @@ function Skills() {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Animate skill categories
       ScrollTrigger.create({
         trigger: ".skills-grid",
         start: "top 85%",
         once: true,
         onEnter: () => {
-          gsap.fromTo(".skill-category",
-            { opacity: 0, y: 40 },
-            { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power3.out" }
+          gsap.fromTo(
+            ".skill-card",
+            { opacity: 0, y: 40, rotateY: -15 },
+            {
+              opacity: 1,
+              y: 0,
+              rotateY: 0,
+              duration: 0.6,
+              stagger: 0.05,
+              ease: "power3.out",
+            },
           );
         },
       });
@@ -102,16 +120,23 @@ function Skills() {
         </header>
 
         <div className="skills-grid">
-          {skillCategories.map((category, index) => (
-            <div key={index} className="skill-category">
-              <div className="skill-category-icon">{category.icon}</div>
-              <h3 className="skill-category-title">{category.title}</h3>
-              <div className="skill-list">
-                {category.skills.map((skill, skillIndex) => (
-                  <span key={skillIndex} className="skill-tag">
-                    {skill}
-                  </span>
-                ))}
+          {skills.map((skill) => (
+            <div key={skill.id} className="skill-card">
+              <div className="skill-card-inner">
+                {/* Front side - Icon and Name */}
+                <div className="skill-card-front">
+                  <svg className="skill-icon" aria-hidden="true">
+                    <use
+                      href={`/Portfolio-Website/icons/sprites.svg#icon-${skill.id}`}
+                    />
+                  </svg>
+                  <span className="skill-name">{skill.name}</span>
+                </div>
+
+                {/* Back side - Story */}
+                <div className="skill-card-back">
+                  <p className="skill-story">{skill.story}</p>
+                </div>
               </div>
             </div>
           ))}

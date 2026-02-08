@@ -22,7 +22,7 @@ function Footer() {
           </a>
 
           <a
-            href="https://linkedin.com/in/bishalkar10"
+            href="https://linkedin.com/in/gain-kar"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-social-link"

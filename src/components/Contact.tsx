@@ -16,8 +16,8 @@ const contactLinks = [
     ),
   },
   {
-    label: "linkedin.com/in/bishalkar10",
-    href: "https://linkedin.com/in/bishalkar10",
+    label: "linkedin.com/in/gain-kar",
+    href: "https://linkedin.com/in/gain-kar",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
